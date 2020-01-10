@@ -1,0 +1,48 @@
+{
+  "name": "custom-tina-field-demo",
+  "private": true,
+  "description": "A simple demo for custom fields in TinaCMS",
+  "license": "MIT",
+  "version": "0.1.0",
+  "author": "@kendallstraut",
+  "scripts": {
+    "dev-next": "next",
+    "dev": "node server.js",
+    "develop": "yarn dev",
+    "build": "next build",
+    "start-next": "next start",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "export": "next export",
+    "deploy": "yarn build && yarn export"
+  },
+  "dependencies": {
+    "@tinacms/api-git": "^0.5.0",
+    "@tinacms/git-client": "^0.4.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "json-loader": "^0.5.7",
+    "moment": "^2.24.0",
+    "next": "^9.1.7",
+    "next-tinacms-json": "^0.1.0-alpha.1",
+    "prop-types": "^15.7.2",
+    "raw-loader": "^4.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^4.4.1",
+    "tinacms": "^0.11.1-alpha.0",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "next",
+    "tinacms"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kendallstrautman/custom-field-tinacms"
+  }
+}
