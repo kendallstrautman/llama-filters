@@ -12,6 +12,7 @@ export default function Index(props) {
       .then((response) => {
         setImageUrl(response.url)
       })
+    console.log(imageUrl)
   }
   return (
     <main>
@@ -44,7 +45,7 @@ export default function Index(props) {
           justify-content: center;
           align-items: center;
           font-family: 'Racing Sans One', cursive;
-          background-color: hsl(${Math.random() * 360}, 100%, 90%);
+          background-color: hsl(${Math.random() * 360}, 20%, 85%);
           background-image: linear-gradient(white, transparent);
           transition: background-color 1s;
         }
@@ -68,6 +69,10 @@ export default function Index(props) {
           justify-content: center;
         }
 
+        #reset:hover {
+          cursor: pointer;
+        }
+
         img {
           width: 700px;
         }
@@ -79,7 +84,7 @@ export default function Index(props) {
           margin: 0 0 4% 0;
           width: 1000vw;
           overflow: hidden;
-          animation: slideIt 30s linear infinite;
+          animation: slideIt 60s linear infinite;
         }
 
         @keyframes slideIt{
