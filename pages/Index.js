@@ -16,26 +16,75 @@ export default function Index(props) {
   return (
     <main>
       <section>
+        <div id="container">
+          <h1>llama filters ⍛ llama filters ⌬ llama filters ⏦ Tina, you fat lard come get some dinner ✺ llama filters ⏃ llama filters ⌂ llama filters ☞ I caught you a delicious bass 🎣</h1>
+        </div>
         {/* Here is the image that will get the treatment 🖼 */}
         <img alt="random-unsplash" src={imageUrl} />
         <div id="reset" onClick={resetImage}>
           <Reset/>
         </div>
       </section>
-      <style jsx>{`
+      <style jsx global>{`
 
         {/* Pass in the image_saturation value 🖍 */}
         img {
           filter: saturate(${data.saturation});
 
         }
-
+        @import url('https://fonts.googleapis.com/css?family=Modak&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap');
+        body {
+          margin: 0;
+        }
         main {
           width: 100vw;
-          height: 100vh;
+          min-height: 100vh;
           display: flex;
           justify-content: center;
           align-items: center;
+          font-family: 'Racing Sans One', cursive;
+          background-color: hsl(${Math.random() * 360}, 100%, 90%);
+          background-image: linear-gradient(white, transparent);
+          transition: background-color 1s;
+        }
+
+        section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+
+        #container {
+          position: relative;
+          width: 700px;
+          height: 70px;
+          overflow: hidden;
+        }
+
+        #reset {
+          display: flex;
+          justify-content: center;
+        }
+
+        img {
+          width: 700px;
+        }
+
+        h1 {
+          transform: translateZ(0);
+          text-transform: uppercase;
+          font-size: 48px;
+          margin: 0 0 4% 0;
+          width: 1000vw;
+          overflow: hidden;
+          animation: slideIt 30s linear infinite;
+        }
+
+        @keyframes slideIt{
+          0%{transform:translateX(700px);}
+          100%{transform:translateX(-4300px);}
         }
       `}</style>
     </main>
