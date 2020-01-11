@@ -5,15 +5,17 @@ import RangeInput from '../components/RangeInput';
 import Reset from '../components/Reset';
 
 export default function Index(props) {
+  // Tina config
   const [data] = useLocalJsonForm(props.data, formOptions)
+
   const [imageUrl, setImageUrl] = React.useState("https://source.unsplash.com/random/700x700")
   function resetImage() {
     fetch("https://source.unsplash.com/random/700x700")
       .then((response) => {
         setImageUrl(response.url)
       })
-    console.log(imageUrl)
   }
+
   return (
     <main>
       <section>
@@ -31,7 +33,6 @@ export default function Index(props) {
         {/* Pass in the image_saturation value 🖍 */}
         img {
           filter: saturate(${data.saturation});
-
         }
         @import url('https://fonts.googleapis.com/css?family=Modak&display=swap');
         @import url('https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap');
