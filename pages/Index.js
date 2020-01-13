@@ -7,7 +7,8 @@ export default function Index(props) {
 
   // Tina config
   const [data] = useLocalJsonForm(props, formOptions)
-
+  
+  // Gets new unsplash image on click
   const [imageUrl, setImageUrl] = React.useState("https://source.unsplash.com/random/700x700")
   function resetImage() {
     fetch("https://source.unsplash.com/random/700x700")
