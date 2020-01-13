@@ -1,4 +1,4 @@
-export default function rangeInput(props) {
+export default function RangeInput(props) {
   return (
     <>
       <div>
