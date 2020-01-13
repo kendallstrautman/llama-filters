@@ -2,11 +2,11 @@ import React from 'react'
 import { useLocalJsonForm, JsonFile } from "next-tinacms-json";
 
 import RangeInput from '../components/RangeInput';
-import Reset from '../components/Reset';
 
 export default function Index(props) {
+
   // Tina config
-  const [data] = useLocalJsonForm(props.data, formOptions)
+  const [data] = useLocalJsonForm(props, formOptions)
 
   const [imageUrl, setImageUrl] = React.useState("https://source.unsplash.com/random/700x700")
   function resetImage() {
@@ -93,16 +93,16 @@ const formOptions = {
       label: "Image Saturation",
       name: "saturation",
       component: RangeInput,
-    },
+    }
   ]
 }
 
 Index.getInitialProps = async function() {
   const data = await import(`../data/data.json`)
   return {
-    data: {
       fileRelativePath: `data/data.json`,
-      data
-    }
+      data: {
+        ...data
+      }
   }
 }
