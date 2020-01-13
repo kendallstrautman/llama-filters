@@ -1,6 +1,6 @@
 import React from 'react'
 import App from 'next/app'
-import { Tina, TinaCMS, ModalOverlay } from 'tinacms'
+import { Tina, TinaCMS } from 'tinacms'
 import { GitClient } from '@tinacms/git-client'
 
 class MyApp extends App {
