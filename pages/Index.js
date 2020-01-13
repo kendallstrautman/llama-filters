@@ -2,11 +2,11 @@ import React from 'react'
 import { useLocalJsonForm, JsonFile } from "next-tinacms-json";
 
 import RangeInput from '../components/RangeInput';
-import Reset from '../components/Reset';
 
 export default function Index(props) {
+
   // Tina config
-  const [data] = useLocalJsonForm(props.data, formOptions)
+  const [data] = useLocalJsonForm(props, formOptions)
 
   const [imageUrl, setImageUrl] = React.useState("https://source.unsplash.com/random/700x700")
   function resetImage() {
@@ -23,10 +23,7 @@ export default function Index(props) {
           <h1>llama filters ⍛ llama filters ⌬ llama filters ⏦ Tina, you fat lard come get some dinner ✺ llama filters ⏃ llama filters ⌂ llama filters ☞ I caught you a delicious bass 🎣</h1>
         </div>
         {/* Here is the image that will get the treatment 🖼 */}
-        <img alt="random-unsplash" src={imageUrl} />
-        <div id="reset" onClick={resetImage}>
-          <Reset/>
-        </div>
+        <img alt="random-unsplash" src={imageUrl} onClick={resetImage}/>
       </section>
       <style jsx global>{`
 
@@ -65,17 +62,9 @@ export default function Index(props) {
           overflow: hidden;
         }
 
-        #reset {
-          display: flex;
-          justify-content: center;
-        }
-
-        #reset:hover {
-          cursor: pointer;
-        }
-
         img {
           width: 700px;
+          cursor: pointer;
         }
 
         h1 {
@@ -104,16 +93,16 @@ const formOptions = {
       label: "Image Saturation",
       name: "saturation",
       component: RangeInput,
-    },
+    }
   ]
 }
 
 Index.getInitialProps = async function() {
   const data = await import(`../data/data.json`)
   return {
-    data: {
       fileRelativePath: `data/data.json`,
-      data
-    }
+      data: {
+        ...data
+      }
   }
 }
