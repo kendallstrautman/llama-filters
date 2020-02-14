@@ -4,7 +4,7 @@ import RangeInput from '../components/RangeInput'
 
 export default function Index(props) {
   // Tina config
-  const [data] = useLocalJsonForm(props, formOptions)
+  const [data, form] = useLocalJsonForm(props.jsonFile, formOptions)
 
   // Gets new unsplash image on click
   const [imageUrl, setImageUrl] = React.useState(
@@ -21,9 +21,10 @@ export default function Index(props) {
       <section>
         <div id="container">
           <h1>
-            llama filters ⍛ llama filters ⌬ llama filters ⏦ Tina, you fat lard
-            come get some dinner ✺ llama filters ⏃ llama filters ⌂ llama filters
-            ☞ I caught you a delicious bass 🎣
+            llama filters ⍛ llama filters ⌬ llama filters ⏦ It’s pretty much my
+            favorite animal. It’s like a lion and a tiger mixed… bred for its
+            skills in magic. ✺ llama filters ⏃ llama filters ⌂ llama filters ☞ I
+            caught you a delicious bass 🎣
           </h1>
         </div>
         {/* Here is the image that will get the treatment 🖼 */}
@@ -109,9 +110,9 @@ const formOptions = {
 Index.getInitialProps = async function() {
   const data = await import(`../data/data.json`)
   return {
-    fileRelativePath: `data/data.json`,
-    data: {
-      saturation: data.default.saturation,
+    jsonFile: {
+      fileRelativePath: `data/data.json`,
+      data: { saturation: data.default.saturation },
     },
   }
 }
