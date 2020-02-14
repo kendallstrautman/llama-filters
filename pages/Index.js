@@ -1,10 +1,9 @@
 import React from 'react'
 import { useLocalJsonForm } from 'next-tinacms-json'
-import RangeInput from '../components/RangeInput'
 
 export default function Index(props) {
   // Tina config
-  const [data, form] = useLocalJsonForm(props.jsonFile, formOptions)
+  const [data] = useLocalJsonForm(props.jsonFile, formOptions)
 
   // Gets new unsplash image on click
   const [imageUrl, setImageUrl] = React.useState(
@@ -102,7 +101,7 @@ const formOptions = {
     {
       label: 'Image Saturation',
       name: 'saturation',
-      component: RangeInput,
+      component: 'range-input',
     },
   ],
 }
