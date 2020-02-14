@@ -7,6 +7,14 @@ import { GitClient } from '@tinacms/git-client'
  */
 import RangeInput from '../components/RangeInput'
 
+/*
+ ** 2. Define the field plugin
+ */
+const customFieldPlugin = {
+  name: 'range-input',
+  Component: RangeInput,
+}
+
 export default class Site extends App {
   constructor() {
     super()
@@ -19,18 +27,10 @@ export default class Site extends App {
         hidden: process.env.NODE_ENV === 'production',
       },
     })
-
-    /*
-     ** 2. Define the field plugin
-     */
-    this.customFieldPlugin = {
-      name: 'range-input',
-      Component: RangeInput,
-    }
     /*
      ** 3. Register the plugin with the cms
      */
-    this.cms.fields.add(this.customFieldPlugin)
+    this.cms.fields.add(customFieldPlugin)
   }
 
   render() {
