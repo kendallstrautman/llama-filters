@@ -3,7 +3,7 @@ import App from 'next/app'
 import { Tina, TinaCMS } from 'tinacms'
 import { GitClient } from '@tinacms/git-client'
 
-class MyApp extends App {
+export default class MyApp extends App {
   constructor() {
     super()
     this.cms = new TinaCMS()
@@ -11,10 +11,10 @@ class MyApp extends App {
     this.cms.registerApi('git', client)
   }
   options = {
-      sidebar: {
-        position: 'overlay',
-        hidden: process.env.NODE_ENV === "production"
-      }
+    sidebar: {
+      position: 'overlay',
+      hidden: process.env.NODE_ENV === 'production',
+    },
   }
   render() {
     const { Component, pageProps } = this.props
@@ -25,4 +25,3 @@ class MyApp extends App {
     )
   }
 }
-export default MyApp
