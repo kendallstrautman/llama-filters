@@ -23,7 +23,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "json-loader": "^0.5.7",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "next": "^9.2.0",
     "next-tinacms-json": "^0.3.1",
     "prop-types": "^15.7.2",
